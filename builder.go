@@ -53,7 +53,7 @@ func BuildOnChange(filepath string) {
 		go runCommand(filename, sigChange)
 		<-fileChange
 		sigChange <- true
-		<-sigChange
+		// <-sigChange
 	}
 }
 
@@ -104,5 +104,5 @@ func runCommand(filename string, change chan bool) {
 		return
 	}
 
-	change <- true
+	// change <- true
 }
